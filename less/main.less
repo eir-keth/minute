@@ -1,0 +1,421 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+	font-family: 'Arial';
+	#content {
+		width: 900px;
+		margin: 0px auto;
+		padding: 20px 50px 50px 50px;
+		h1 {
+			font-size: 60px;
+			margin-bottom: 20px;
+		}
+		.list_content {
+			overflow: hidden;
+			margin-bottom: 40px;
+			li {
+				float: left;
+				width: 240px;
+				background: #e5e5e5;
+				padding: 10px 10px 15px 10px;
+				margin: 0px 60px 30px 0px;
+				vertical-align: top;
+				&:nth-child(3) {
+					margin-right: 0px;
+				}
+				img {
+					display: block;
+					margin-bottom: 10px;
+				}
+				a {
+					color: #000000;
+					text-decoration: none;
+					font-size: 18px;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+		nav {
+			height: 50px;
+			background: #e5e5e5;
+			border-bottom: 1px solid #000000;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: flex;
+			margin-bottom: 230px;
+			position: relative;
+			z-index: 10;
+			b {
+				height: 49px;
+				vertical-align: middle;
+				position: relative;
+				border-top: 1px solid #000000;
+				border-left: 1px solid #000000;
+				background: #e5e5e5;
+				&:last-child {
+					border-right: 1px solid #000000;
+				}
+				p {
+					font-size: 21px;
+					line-height: 47px;
+					height: 54px;
+					padding: 0px 35px;
+					cursor: pointer;
+					position: relative;
+					z-index: 1;
+					top: -1px; 
+				}
+				.show {
+					display: none;
+				}
+				&:hover {
+					border-left: 1px solid transparent;
+					p {
+						background: #ffffff;
+						box-shadow: 5px 0px 10px -5px rgba(0, 0, 0, 0.3), -5px 0px 10px -5px rgba(0, 0, 0, 0.3);
+						z-index: 20;
+					}
+					.show {
+						display: block;
+						position: absolute;
+						top: 48px;
+						box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.3);
+						padding: 15px;
+						width: 370px;
+						z-index: 1;
+						ul {
+							width: 110px;
+							margin-right: 20px;
+							display: inline-block;
+							vertical-align: top;
+							li {
+								margin-bottom: 8px;
+								line-height: 11px;
+								&:last-child {
+									margin-bottom: 0px;
+								}
+								a {
+									font-size: 11px;
+									color: #000000;
+									text-decoration: none;
+									&:hover {
+										text-decoration: underline;
+									}
+								}
+							}
+						}
+						img {
+							display: inline-block;
+							height: 140px;
+							width: 100px;
+						}
+					}
+				}
+				&:hover:last-child, &.hover:last-child {
+					border-right: 1px solid transparent;
+				}
+				&:hover + b, &.hover + b {
+					border-left: 1px solid transparent;
+				}
+			}
+		}
+		form {
+			position: relative;
+			margin-bottom: 70px;
+			select {
+				display: inline-block;
+				width: 200px;
+				height: 40px;
+				border: 1px solid #cccccc;
+				padding-left: 10px;
+				margin-right: 15px;
+				font-size: 17px;
+				outline: 0 !important;
+				box-shadow: none !important;
+				-moz-appearance:none;
+				-webkit-appearance:none;
+				-ms-appearance:none;
+				appearance:none;
+				position: relative;
+				background: #e5e5e5 url("../images/select.png") 95% center no-repeat;
+				&::-ms-expand {
+				    display: none;
+				}
+				option {
+					outline: none !important;
+
+					&:first-child {
+						display: none; 
+					}
+					&:focus {
+			    		outline: none !important;
+			    	}
+				}
+				&:focus {
+			    	outline: none !important;
+			    }
+			}
+			.checklabel {
+				background: #e5e5e5;
+				border: 1px solid #cccccc;
+				border-radius: 3px;
+				width: 20px;
+				height: 20px;
+				margin-right: 10px;
+				display: inline-block;
+				&:hover {
+					background: #f7f7f7;
+				}
+			}
+			input[type="checkbox"] {
+				display: none !important;
+				&:checked+label {
+					position: relative;
+				}
+				&:checked+label:after {
+					content: " ";
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					width: 10px;
+					height: 10px;
+					background: #000000;
+					margin-top: -5px;
+					margin-left: -5px;
+					border-radius: 3px;
+				}
+			}
+			.radiolabel {
+				background: #e5e5e5;
+				border: 1px solid #cccccc;
+				border-radius: 100%;
+				width: 20px;
+				height: 20px;
+				display: inline-block;
+				margin-right: 10px;
+
+				&:hover {
+					background: #f7f7f7;
+				}
+			}
+			input[type="radio"] {
+				display: none !important;
+				
+				&:checked+label {
+					position: relative;
+				}
+				&:checked+label:after {
+					content: " ";
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					width: 10px;
+					height: 10px;
+					background: #000000;
+					margin-top: -5px;
+					margin-left: -5px;
+					border-radius: 100%;
+				}
+			}
+			.group {
+				display: inline-block;
+				margin: 0px 20px;
+				vertical-align: middle;
+				input {
+					display: inline-block;
+					margin: 0px 7px;
+					width: 22px;
+					height: 22px;
+				}
+			}
+			p {
+				display: inline-block;
+				font-size: 17px;
+			}
+			button {
+				display: inline-block;
+				width: 100px;
+				height: 40px;
+				text-align: center;
+				background: #e5e5e5;
+				border: 0px;
+				border-bottom: 1px solid #cccccc;
+				border-radius: 5px;
+				font-size: 18px;
+				cursor: pointer;
+				position: absolute;
+				right: 0px;
+				&:focus {
+			    	outline: 0;
+			    }
+				&:hover {
+					background: #cccccc;
+				}
+				&:active {
+					background: #f5f5f5;
+					border: 0px;
+					box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3);
+				}
+			}
+		}
+		section {
+			height: 300px;
+			position: relative;
+			.view {
+				height: 300px;
+				display: inline-block;
+				width: 70%;
+				background: #e47a7c;
+				vertical-align: top;
+				position: relative;
+				> ul > li {
+					position: absolute;
+					opacity: 0;
+					width: 100%;
+					height: 100%;
+					text-align: center;
+
+					-webkit-transition: opacity 1s linear 0.5s;
+				     -moz-transition: opacity 1s linear 0.5s;
+				     -o-transition: opacity 1s linear 0.5s;
+				     transition: opacity 1s linear 0.5s;
+				     display: table;
+				    
+
+				     span {
+				     	 display: table-cell;
+				     	vertical-align: middle;
+				     	height: 300px;
+				     	width: 100%;
+				     }
+
+					&.current {
+						opacity: 1;
+					}
+					img {
+						max-height: 100%;
+					}
+				}
+			}
+			.list {
+				bottom: 0px;
+				right: 0px;
+				position: absolute;
+				
+				display: inline-block;
+				vertical-align: top;
+
+				bottom: 20px;
+				right: 20px;
+				width: 100%;
+				
+				ul {
+					text-align: right;
+					li {
+						display: inline-block;
+						margin-left: 8px;
+						background: #ffffff;
+						border: 1px solid #ffffff;
+						border-radius: 100%;
+						width: 8px;
+						height: 8px;
+						cursor: pointer;
+						span {
+							display: block;
+							width: 8px;
+							height: 8px;
+						}
+						&.current {
+							background: #000000;
+						}
+					}
+				}
+			}
+			.text {
+				height: 100%;
+				width: 30%;
+				vertical-align: top;
+				background: #e5e5e5;
+				display: inline-block;
+				margin-left: -6px;
+				position: relative;
+				ul {
+					padding: 30px 10px 10px 0px;
+					li {
+						margin-bottom: 22px;
+						position: relative;
+						display: -ms-flexbox;
+						display: -webkit-flex;
+    					display: -moz-flex;
+						display: flex;
+						
+						align-items: center;
+						a {
+							font-size: 18px;
+							color: #000000;
+							text-decoration: none;
+							&:hover {
+								text-decoration: underline;
+							}
+						}
+						span {
+							width: 0;
+							height: 0;
+							border-style: solid;
+							border-width: 20px 0 20px 10px;
+							border-color: transparent;
+							margin-right: 10px;
+						}
+						&.current span {
+							border-color: transparent transparent transparent #e47a7b;
+						}
+					}
+				}
+			}
+		}
+	}
+}

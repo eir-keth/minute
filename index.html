@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>TEST</title>
+    <link href="./css/main.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+  	<div id="content">
+  		<h1>Каталог</h1>
+  		<ul class="list_content">
+  			<li><img src="./images/grey.jpg" alt=""><a href="#">СМИ сообщают, что в Индии был замечен новый внедорожник Chevrolet Trailblazer</a></li>
+  			<li><img src="./images/grey.jpg" alt=""><a href="#">Официальные диллеры немецкого автоконцерна "Audi" в России начали прием заказов на 5-местный хетчбэк RS 3 Sportback</a></li>
+  			<li><img src="./images/grey.jpg" alt=""><a href="#">Dutsun наращивает продажи в России</a></li>
+  			<li><img src="./images/grey.jpg" alt=""><a href="#">В России может появиться дизельный Hyundai ix25</a></li>
+  			<li><img src="./images/grey.jpg" alt=""><a href="#">Lamborghini не хочет выпускать бюджетный спорткар за 200 000 долларов</a></li>
+  		</ul>
+  		<h1>Меню</h1>
+  		<nav>
+  			<b><p>Главная</p></b>
+  			<b><p>Каталог</p>
+  				<div class="show">
+  					<ul>
+  						<li><a href="#">ТВ и Видео</a></li>
+	  					<li><a href="#">Компьютерная техника</a></li>
+	  					<li><a href="#">Фото и видео техника</a></li>
+	  					<li><a href="#">Телефоны</a></li>
+	  					<li><a href="#">Портативная техника</a></li>
+	  					<li><a href="#">Аудиотехника</a></li>
+  					</ul>
+  					<ul>
+  						<li><a href="#">Автотехника</a></li>
+	  					<li><a href="#">Техника для дома</a></li>
+	  					<li><a href="#">Техника для кухни</a></li>
+	  					<li><a href="#">Встраиваемая техника</a></li>
+	  					<li><a href="#">Красота и Здоровье</a></li>
+	  					<li><a href="#">Игры и приставки</a></li>
+  					</ul>
+  					<img src="./images/woman.jpg" alt="" />
+  				</div>
+  			</b>
+  			<b><p>О компании</p></b>
+  			<b><p>Контакты</p></b>
+  		</nav>
+  		<h1>Форма</h1>
+  		<form>
+  			<select>
+  				<option disabled selected>Ваш пол</option>
+  				<option>М</option>
+  				<option>Ж</option>
+  			</select>
+  			<div class="group">
+  				<input type="radio" id="radio_1" name="radio-group" />
+  				<label for="radio_1" class="radiolabel"></label>
+  				<input type="radio" id="radio_2" name="radio-group" />
+  				<label for="radio_2" class="radiolabel"></label>
+  				<input type="radio" id="radio_3" name="radio-group" />
+  				<label for="radio_3" class="radiolabel"></label>
+  			</div>
+  			<div class="group">
+  				<input type="checkbox" id="checkbox_1" />
+  				<label for="checkbox_1" class="checklabel"></label>
+  				<input type="checkbox" id="checkbox_2" />
+  				<label for="checkbox_2" class="checklabel"></label>
+  				<input type="checkbox" id="checkbox_3" />
+  				<label for="checkbox_3" class="checklabel"></label>
+  			</div>
+  			<p>Отметьте что-нибудь</p>
+  			<button>Кнопка</button>
+  		</form>
+  		<h1>Слайдер</h1>
+  		<section id="slider">
+  			<div class="view">
+  				<ul>
+  					<li class="current"><span><img src="./images/pink.jpg" alt="" /></span></li>
+  					<li><span><img src="./images/2.png" alt="" /></span></li>
+  					<li><span><img src="./images/3.png" alt="" /></span></li>
+  					<li><span><img src="./images/4.png" alt="" /></span></li>
+  				</ul>
+
+  				<div class="list">
+	  				<ul>
+	  					<li class="current"><span></span></li>
+	  					<li><span></span></li>
+	  					<li><span></span></li>
+	  					<li><span></span></li>
+	  				</ul>
+	  			</div>
+  			</div>
+  			<div class="text">
+  				<ul>
+  					<li class="current"><span></span><a href="#">В Индии был замечен новый Chevrolet Trailblazer</a></li>
+  					<li><span></span><a href="#">Dutsun наращивает продажи в России</a></li>
+  					<li><span></span><a href="#">Ford Kuga ожидает премиальная модификация Vignale</a></li>
+  					<li><span></span><a href="#">Объем продаж Audi по всему миру вырос на 6%</a></li>
+  				</ul>
+  			</div>
+  		</section>
+  	</div>
+  	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+  	<script type="text/javascript">
+  		$(document).ready(function() {
+  			var slider = $("#slider");
+  			var sliderNavItem = slider.find(".text ul li a, .view ul li span");
+  			
+  			var selectItem = function(index, list) {
+  				var allLi = list.find("li");
+
+  				allLi.removeClass("current");
+  				allLi.eq(index).addClass("current");
+  			}
+
+  			sliderNavItem.on("click", function() {
+  				selectItem($(this).parents("li").index(), $("#slider .text ul"));
+  				selectItem($(this).parents("li").index(), $("#slider .list ul"));
+  				selectItem($(this).parents("li").index(), $("#slider .view > ul"));
+  				return false;
+  			});
+  		});
+  	</script>
+  </body>
+</html>
